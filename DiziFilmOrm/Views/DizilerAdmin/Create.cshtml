@@ -1,0 +1,49 @@
+﻿@model DiziFilmModel.Models.Diziler
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Diziler</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DiziAdi" class="control-label"></label>
+                <input asp-for="DiziAdi" class="form-control" />
+                <span asp-validation-for="DiziAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiziTür" class="control-label"></label>
+                <input asp-for="DiziTür" class="form-control" />
+                <span asp-validation-for="DiziTür" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiziGün" class="control-label"></label>
+                <input asp-for="DiziGün" class="form-control" />
+                <span asp-validation-for="DiziGün" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KanalID" class="control-label"></label>
+                <input asp-for="KanalID" class="form-control" />
+                <span asp-validation-for="KanalID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

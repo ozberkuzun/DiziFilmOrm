@@ -1,0 +1,49 @@
+﻿@model DiziFilmModel.Models.Oyuncular
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Oyuncular</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OyuncuAdi" class="control-label"></label>
+                <input asp-for="OyuncuAdi" class="form-control" />
+                <span asp-validation-for="OyuncuAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OyuncuYas" class="control-label"></label>
+                <input asp-for="OyuncuYas" class="form-control" />
+                <span asp-validation-for="OyuncuYas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OyuncuCinsiyet" class="control-label"></label>
+                <input asp-for="OyuncuCinsiyet" class="form-control" />
+                <span asp-validation-for="OyuncuCinsiyet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiziID" class="control-label"></label>
+                <input asp-for="DiziID" class="form-control" />
+                <span asp-validation-for="DiziID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DiziFilmModel.Models.Diziler>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DiziAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiziTür)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiziGün)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KanalID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiziAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiziTür)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiziGün)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KanalID)
+            </td>
+            <td>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

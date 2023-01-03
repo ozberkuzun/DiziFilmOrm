@@ -1,0 +1,43 @@
+﻿@model DiziFilmModel.Models.Kanallar
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Kanallar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="KanalID" />
+            <div class="form-group">
+                <label asp-for="KanalAdi" class="control-label"></label>
+                <input asp-for="KanalAdi" class="form-control" />
+                <span asp-validation-for="KanalAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KanalSahibi" class="control-label"></label>
+                <input asp-for="KanalSahibi" class="form-control" />
+                <span asp-validation-for="KanalSahibi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KurulusYili" class="control-label"></label>
+                <input asp-for="KurulusYili" class="form-control" />
+                <span asp-validation-for="KurulusYili" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

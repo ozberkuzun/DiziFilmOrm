@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DiziFilmModel.Models.Oyuncular>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OyuncuAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OyuncuYas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OyuncuCinsiyet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiziID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OyuncuAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OyuncuYas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OyuncuCinsiyet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiziID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OyuncuID">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.OyuncuID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
